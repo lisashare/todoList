@@ -1,0 +1,8 @@
+
+.card .btn-box{
+	display:flex;
+	justify-content: flex-end;
+}
+.card .btn-box button{
+	margin:0 5px;
+}
