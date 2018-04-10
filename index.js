@@ -7,7 +7,7 @@ new Vue({
 			{id:1,title:'我爱编程',isFinished:false},
 			{id:2,title:'coding使我快乐',isFinished:true}
 		],
-		isRemoveShow:false,
+		isRemoveShow:false, //弹出框
 		//点击弹出层确定的时候，发现没得传，找一个桥梁
 		preRemoveId:null//准备要删除的todo.id
     },
