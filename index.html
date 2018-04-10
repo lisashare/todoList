@@ -17,22 +17,38 @@
             <h1 class="title">TodoList</h1>
         </header>
         <!-- header end -->
+        <!--content start-->
         <div class="content">
-	        <div class="card">
+	        <div class="card" v-for="todo of todos" :key="todo.id">
 			    <div class="card-content">
-			      <div class="card-content-inner">
-			      	<p>11111</p>
+			      <div class="card-content-inner" >
+			      	<p>{{ todo.title }}</p>
 			      	<div class="btn-box">
-			      		<button class="button button-success"><i class="icon icon-check"></i>
+			      		<button @click="todo.isFinished = !todo.isFinished" :class="{'button-fill':todo.isFinished}" class="button button-success"><i class="icon icon-check"></i>
 			      			
 			      		</button>
-			      		<button class="button button-success"><i class="icon icon-remove"></i>
+			      		<button @click="checkFinished( todo.id,todo.isFinished )" class="button button-danger"><i class="icon icon-remove"></i>
 			      		</button>
 			      	</div>
 			      </div>
 			    </div>
   			</div>
   		</div>
+  		<!--content end-->
+  		<!--remove message start-->
+  		<div v-if="isRemoveShow" @click="isRemoveShow=false" class="remove-message">
+  			
+  			<div class="modal modal-in" style="display: block; margin-top: -57px;">
+  				<div class="modal-inner" style="background:#fff;">
+  					<div class="modal-text">事项还未完成,真的要删除么？
+  					</div>
+  				</div>
+  				<div class="modal-buttons" @click="removeTodo(preRemoveId)">
+  					<span class="modal-button modal-button-bold" style="background:#fff;">确定</span>
+  				</div></div>
+  		</div>
+  		
+  		<!--remove message end-->
     </div>
     <!-- 在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告! -->
     <script src="./base/vue.js"></script>
