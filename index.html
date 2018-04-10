@@ -19,7 +19,7 @@
         <!-- header end -->
         <!--content start-->
         <div class="content">
-	        <div class="card" v-for="todo of todos" :key="todo.id">
+	        <div class="card" v-for="todo of showTodos" :key="todo.id">
 			    <div class="card-content">
 			      <div class="card-content-inner" >
 			      	<p>{{ todo.title }}</p>
@@ -37,18 +37,21 @@
   		<!--content end-->
   		<!--remove message start-->
   		<div v-if="isRemoveShow" @click="isRemoveShow=false" class="remove-message">
-  			
   			<div class="modal modal-in" style="display: block; margin-top: -57px;">
   				<div class="modal-inner" style="background:#fff;">
-  					<div class="modal-text">事项还未完成,真的要删除么？
-  					</div>
+  					<div class="modal-text">事项还未完成,真的要删除么？</div>
   				</div>
   				<div class="modal-buttons" @click="removeTodo(preRemoveId)">
   					<span class="modal-button modal-button-bold" style="background:#fff;">确定</span>
-  				</div></div>
+  				</div>
+  			</div>
   		</div>
-  		
   		<!--remove message end-->
+  		<!--show btns start-->
+  		<div class="btns-box show-btns">
+  			<div @click="activeShowType = btn.type" :class="['circle-' + btn.theme,(btn.type === activeShowType)?'circle-fill':'']" v-for="btn in showBtns" :key="btn.id" class="circle">{{ btn.title }}</div>
+  		</div>
+  		<!--show btns end-->
     </div>
     <!-- 在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告! -->
     <script src="./base/vue.js"></script>

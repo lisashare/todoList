@@ -1,4 +1,9 @@
+/*reset*/
+*{
+	box-sizing:border-box;
+}
 
+/*todo*/
 .card .btn-box{
 	display:flex;
 	justify-content: flex-end;
@@ -11,4 +16,58 @@
 	top:0;right:0;bottom:0;left:0;
 	z-index: 11;
 	background:rgba(0,0,0,0.2);
+}
+/*btns*/
+.btns-box{
+	width:100%;
+	height:80px;
+	position:absolute;
+	bottom:0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.btns-box .circle{
+	width:60px;height:60px;
+	border-radius: 50%;
+	/*弹性盒让字体居中*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border:1px solid #333;
+}
+.btns-box .circle.circle-success {
+    border-color: rgb(26, 182, 65);
+    color: rgb(26, 182, 65);
+}
+.btns-box .circle.circle-success.circle-fill {
+    background: rgb(26, 182, 65);
+    color: #fff;
+}
+
+.btns-box .circle.circle-primary {
+    border-color: rgb(14, 123, 185);
+    color: rgb(14, 123, 185);
+}
+.btns-box .circle.circle-primary.circle-fill {
+    background: rgb(14, 123, 185);
+    color: #fff;
+}
+
+.btns-box .circle.circle-danger {
+    border-color: rgb(236, 17, 46);
+    color: rgb(236, 17, 46);
+}
+.btns-box .circle.circle-danger.circle-fill {
+    background: rgb(236, 17, 46);
+    color: #fff;
+}
+
+.btns-box .circle.circle-warning {
+    border-color: rgb(223, 202, 18);
+    color: rgb(223, 202, 18);
+}
+.btns-box .circle.circle-warning.circle-fill {
+    background: rgb(223, 202, 18);
+    color: #fff;
 }
